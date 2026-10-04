@@ -15,10 +15,9 @@ class PDFUnlockerApp:
         self.root.resizable(False, False)
 
         # Default backup folder
-        self.backup_folder = r"C:\Python_Practise\PDFs_locked_backup"
-
-        # Create backup folder automatically
-        os.makedirs(self.backup_folder, exist_ok=True)
+        self.backup_folder = os.path.join(
+            os.path.expanduser("~"), "PDFUnlocker", "backups"
+        )
 
         # --------------------------------------------------
         # Title
